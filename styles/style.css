@@ -1,0 +1,103 @@
+body{ 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.container{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10000;
+}
+.container2{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.container3{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10000;
+}
+.container4{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.heart{
+    position: relative;
+    height: 160px;
+    width: 100px;
+    background-color: red;
+    transform: rotate(45deg);
+    border-radius: 200px 200px 0 0;
+
+}
+.heart::before{
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    height: 160px;
+    width: 100px;
+    background-color: red; 
+    transform: rotate(-90deg);
+    border-radius: 200px 200px 0 0; 
+}
+.heart::after{
+    content: "im sowwiw, babyyyy";
+    text-shadow: 10px;
+    position: absolute;
+    top: 35%;
+    left: -9%;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    transform: rotate(-45deg);
+}
+
+
+.sway-heart {
+    animation: fall 2.5s linear forwards, sway 2.5s ease-in-out infinite;
+}
+
+@keyframes sway {
+    0% { transform: rotate(45deg) translateX(0); }
+    20% { transform: rotate(45deg) translateX(-30px); }
+    40% { transform: rotate(45deg) translateX(30px); }
+    60% { transform: rotate(45deg) translateX(-20px); }
+    80% { transform: rotate(45deg) translateX(20px); }
+    100% { transform: rotate(45deg) translateX(0); }
+}
+
+.falling-heart {
+    animation: fall 1.2s ease-in forwards;
+}
+
+.falling-heart::after {
+    content: "";
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: rotate(45deg) translateY(0) scale(1);
+    }
+    80% {
+        opacity: 1;
+        transform: rotate(45deg) translateY(300px) scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translateY(400px) scale(0.8);
+    }
+}
+
